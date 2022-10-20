@@ -6,7 +6,7 @@ drop table if exists Manager cascade;
 drop table if exists Warehouse cascade;
 
 create table Store(
-	storeid int not null,
+	storeid int not null UNIQUE,
 	name char(30) not null,
 	latitude decimal(8,6) not null,
 	longitude decimal(9,6) not null,
@@ -30,7 +30,7 @@ create table Product(
 );
 
 create table Userr(
-	userid int not null,
+	userid int not null UNIQUE,
 	password char(11) not null,
 	name char(50) not null,
 	email char(50),
@@ -55,7 +55,7 @@ create table Manager(
 );
 
 create table Warehouse(
-	warehouseid int not null,
+	warehouseid int not null UNIQUE,
 	area int,
 	latitude decimal(8,6) not null,
 	longitude decimal(9,6) not null,
